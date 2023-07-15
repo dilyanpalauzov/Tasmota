@@ -252,5 +252,6 @@
 #undef USE_THERMOSTAT                            // Disable support for Thermostat
 #undef DEBUG_THEO                                // Disable debug code
 #undef USE_DEBUG_DRIVER                          // Disable debug code
+#undef USE_TASMOTA_DISCOVERY
 
 #endif  // _USER_CONFIG_OVERRIDE_H_

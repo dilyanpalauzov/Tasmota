@@ -124,44 +124,15 @@
 #undef USE_DISCOVERY                             // Disable mDNS for the following services (+8k code or +23.5k code with core 2_5_x, +0.3k mem)
 
 // -- IR options ----------------------------
-/*
-#define USE_IR_HVAC
+
+// #define USE_IR_HVAC
 #define _IR_ENABLE_DEFAULT_ false
 #define SEND_RAW true
-//#define USE_IR_REMOTE                            // Enable IR remote commands using library IRremoteESP8266
-*/
+// #define USE_IR_REMOTE                            // Enable IR remote commands using library IRremoteESP8266
 #define USE_IR_REMOTE_FULL                       // Support all IR protocols from IRremoteESP8266
-/*
-#define USE_IR_RECEIVE 
+// #define USE_IR_RECEIVE 
 #define DECODE_HASH  true
 #define SEND_GLOBALCACHE true
-/*
-#define DECODE_WHIRLPOOL_AC  false
-#define SEND_WHIRLPOOL_AC    false
-#define DECODE_SAMSUNG_AC    false
-#define SEND_SAMSUNG_AC      false
-#define SEND_NEC false
-#define DECODE_SHERWOOD false
-#define SEND_SHERWOOD false
-#define DECODE_RC5 false
-#define SEND_RC5 false
-#define DECODE_RC6 false
-#define SEND_RC6 false
-#define DECODE_RCMM false
-#define SEND_RCMM false
-#define DECODE_SONY false
-#define SEND_SONY false
-#define DECODE_PANASONIC false
-#define SEND_PANASONIC false
-#define DECODE_JCV false
-#define SEND_JCV false
-#define DECODE_MAGIQUEST false
-#define SEND_MAGIQUEST false
-#define DECODE_MIDEA false
-#define SEND_MIDEA false
-#define DECODE_MIDEA24 false
-#define SEND_MIDEA24 false
-*/
 #define DECODE_TOSHIBA_AC true
 #define SEND_TOSHIBA_AC true
 #define DECODE_DAIKIN true

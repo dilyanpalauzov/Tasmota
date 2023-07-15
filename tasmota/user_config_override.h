@@ -23,6 +23,12 @@
 
 // -- Setup your own Wifi settings  ---------------
 #undef  STA_SSID1
+#ifdef KARLSRUHE
+#define STA_SSID1         "UPC4654669"             // [Ssid1] Wifi SSID
+#undef  STA_PASS1
+#define STA_PASS1         "e8tpJsjzzypa"     // [Password1] Wifi password
+#else
+
 #define STA_SSID1         "Palauzovi"             // [Ssid1] Wifi SSID
 
 #undef  STA_PASS1
@@ -33,10 +39,27 @@
 
 #undef  STA_PASS2
 #define STA_PASS2         "pluwane9"     // [Password2] Wifi password
+#endif
 
 // -- Setup your own MQTT settings  ---------------
+#ifdef KARLSURHE
+#define USE_MQTT_TLS                             // Use TLS for MQTT connection (+34.5k code, +7.0k mem and +4.8k additional during connection handshake)
+#undef  MQTT_TLS_ENABLED
+#define MQTT_TLS_ENABLED       true              // [SetOption103] Enable TLS mode (requires TLS version)
+
+#define BR_MAX_EC_SIZE 384
+#define USE_MQTT_TLS_CA_CERT
+#define USE_MQTT_TLS_FORCE_EC_CIPHER
+#endif
+
 #undef  MQTT_HOST
+#ifdef KARLSRUHE
+#define MQTT_HOST         "95.43.114.153"
+#undef  MQTT_PORT
+#define MQTT_PORT         8883
+#else
 #define MQTT_HOST         "192.168.0.176" // [MqttHost]
+#endif
 
 #undef  MQTT_USER
 #define MQTT_USER         "a"         // [MqttUser] Optional user
@@ -137,6 +160,9 @@
 #define SEND_TOSHIBA_AC true
 #define DECODE_DAIKIN true
 #define SEND_DAIKIN true
+#ifdef KARLSRUHE
+#define SEND_LG true
+#endif
 
 #undef USE_IR_SEND_NEC                        // Support IRsend NEC protocol
 #undef USE_IR_SEND_RC5                        // Support IRsend Philips RC5 protocol

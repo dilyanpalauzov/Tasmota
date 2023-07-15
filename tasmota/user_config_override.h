@@ -162,9 +162,10 @@
 #define SEND_DAIKIN true
 #ifdef KARLSRUHE
 #define SEND_LG true
+#else
+#undef USE_IR_SEND_NEC                        // Support IRsend NEC protocol
 #endif
 
-#undef USE_IR_SEND_NEC                        // Support IRsend NEC protocol
 #undef USE_IR_SEND_RC5                        // Support IRsend Philips RC5 protocol
 #undef USE_IR_SEND_RC6                        // Support IRsend Philips RC6 protocol
 #undef USE_MODBUS_BRIDGE

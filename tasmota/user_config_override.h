@@ -22,13 +22,18 @@
 #define CFG_HOLDER        4617                   // [Reset 1] Change this value to load SECTION1 configuration parameters to flash
 
 // -- Setup your own Wifi settings  ---------------
-#undef  STA_SSID1
+#ifdef PRAHA
+#undef  WIFI_CONFIG_TOOL
+#define WIFI_CONFIG_TOOL       7                 // [WifiConfig] Default tool if Wi-Fi fails to connect (default option: 4 - WIFI_RETRY)
+#endif
 #ifdef KARLSRUHE
+#undef  STA_SSID1
+
 #define STA_SSID1         "UPC4654669"             // [Ssid1] Wifi SSID
 #undef  STA_PASS1
 #define STA_PASS1         "e8tpJsjzzypa"     // [Password1] Wifi password
-#else
-
+#elif !defined (PRAHA)
+#undef  STA_SSID1
 #define STA_SSID1         "Palauzovi"             // [Ssid1] Wifi SSID
 
 #undef  STA_PASS1
@@ -51,7 +56,7 @@
 #define USE_MQTT_TLS_CA_CERT
 #define USE_MQTT_TLS_FORCE_EC_CIPHER
 #endif
-
+#ifndef PRAHA
 #undef  MQTT_HOST
 #ifdef KARLSRUHE
 #define MQTT_HOST         "95.43.114.153"
@@ -66,6 +71,7 @@
 
 #undef  MQTT_PASS
 #define MQTT_PASS         "123"         // [MqttPassword] Optional password
+#endif
 
 #ifndef SUB_PREFIX
 #define SUB_PREFIX             "cmnd"            // [Prefix1] Tasmota devices subscribe to %prefix%/%topic% being SUB_PREFIX/MQTT_TOPIC and SUB_PREFIX/MQTT_GRPTOPIC
